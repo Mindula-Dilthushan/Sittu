@@ -1,0 +1,44 @@
+{
+   "Users": [
+      {
+         "id": "",
+         "name": "",
+         "Amount": ""
+      },
+      {
+         "id": "",
+         "name": "",
+         "amonut": ""
+      },
+      {
+         "id": "C001",
+         "name": "Chathumal",
+         "amonut": "10000"
+      },
+      {
+         "id": "C001",
+         "name": "Chathumal",
+         "amonut": "10000"
+      },
+      {
+         "id": "",
+         "name": "",
+         "amonut": ""
+      },
+      {
+         "id": "",
+         "name": "",
+         "amonut": ""
+      },
+      {
+         "id": "ff",
+         "name": "ff",
+         "amonut": "fff"
+      },
+      {
+         "id": "dd",
+         "name": "dd",
+         "amonut": "ddd"
+      }
+   ]
+}

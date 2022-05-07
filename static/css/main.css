@@ -1,0 +1,44 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.container {
+    width: 50%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    width: 100%;
+    margin: 2px;
+    height: 20px;
+}
+
+.btn-save {
+    width: 70%;
+    background-color: #008b8b;
+    margin: 2px;
+    color: white;
+    height: 30px;
+    border: none;
+}
+
+.btn-save:hover {
+    cursor: pointer;
+    background-color: #295ab4;
+}
