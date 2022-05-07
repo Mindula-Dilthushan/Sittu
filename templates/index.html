@@ -8,34 +8,96 @@
 </head>
 <body class="m-4 font-monospace">
     <h1 class="header text-center bg-primary text-white ">
-        සීට්ටු  &nbsp; Application
+        සීට්ටු&nbsp; Application
     </h1>
     <br>
-    <div class="text-center">
+    <div  class="text-center">
     <div class="container w-50">
         <div class="input-group mb-3 text-center">
-            <span class="input-group-text" id="basic-addon1">@Enter user name</span>
-            <input type="text" class="form-control" placeholder="ගෝඨාභය රාජපක්ශ" aria-label="Username"
+            <span class="input-group-text" >@Enter user name</span>
+            <input type="text" class="form-control" id="username" name="username" placeholder="ගෝඨාභය රාජපක්ශ" aria-label="Username"
                 aria-describedby="basic-addon1">
         </div>
     <div class="input-group mb-3 text-center">
         <span class="input-group-text" id="basic-addon1">@Enter NIC no: </span>
-        <input type="text" class="form-control" placeholder="199319292832" aria-label="NIC number"
+        <input type="text" class="form-control" id="nic" name="nic" placeholder="199319292832" aria-label="NIC number"
             aria-describedby="basic-addon1">
     </div>
         <div class="input-group mb-3 text-center">
             <span class="input-group-text" id="basic-addon1">@Enter amount: </span>
-            <input type="text" class="form-control" placeholder="2000" aria-label="amount"
+            <input type="number" class="form-control" id="amount" name="amount" placeholder="2000" aria-label="amount"
                 aria-describedby="basic-addon1">
         </div>
-    <button type="button" class="btn btn-success">Add new user</button>
-
+    <button type="button" class="btn btn-success" onclick="addNewUserButtonOnPress()">Add new user</button>
 
     </div>
     </div>
+<br><br>
+    <div class="table_wrapper container bg-dark ">
+        <table class="table container text-center text-white">
+            <thead>
+                <tr>
+                    <th scope="col">NIC</th>
+                    <th scope="col">username</th>
+                    <th scope="col">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    
+                    <td>Mark</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                </tr>
+                <tr>
+                                        <td>Mark</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                </tr>
+                <tr>
+                    <td>Mark</td>                    <td>Jacob</td>
+                    <td>Thornton</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
 
 
 
 
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    function addNewUserButtonOnPress() {
+        if ($("#nic").val()=="") {
+            alert("Enter nic number")
+            return
+        }
+        if ($("#username").val() == "") {
+            alert("Enter user name")
+            return
+        }
+        if ($("#amount").val() == "") {
+            alert("Enter amount please")
+            return
+        }
+        $.ajax({
+                url: 'localhost',
+                type: 'POST',
+                dataType: 'json', // type of response data
+                timeout: 500,     // timeout milliseconds
+            success: function () {
+                alert('Hello');
+            },
+            error: function (jqXhr, textStatus, errorMessage) { // error callback 
+                    $('p').append('Error: ' + errorMessage);
+            }
+            });
+
+
+    }
+</script>
+
 </html>
