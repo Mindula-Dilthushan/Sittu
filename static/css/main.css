@@ -1,0 +1,126 @@
+.font {
+    font-family: poppins, sans-serif;
+    font-weight: 500;
+}
+
+/*start add user css--------------------------------------------------------------------------------------------------*/
+.header-div {
+    height: 65px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #3867d6;
+}
+
+.btn-bg {
+    background-color: #3867d6;
+    color: white;
+    margin: 10px;
+}
+
+.btn-bg:hover {
+    color: white;
+}
+
+.table-bg {
+    background-color: #3867d6;
+}
+
+.form-div {
+    margin-top: 20px;
+}
+
+.form {
+    width: 100%;
+    height: 100%;
+}
+
+/*end add user css----------------------------------------------------------------------------------------------------*/
+
+/*start index css ----------------------------------------------------------------------------------------------------*/
+.display-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.welcome-body {
+    font-family: Roboto, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.content-div {
+    display: flex;
+    width: 50%;
+    height: 50%;
+}
+
+.wc-button {
+    margin: 10px;
+    width: 50%;
+    height: 12%;
+    text-decoration: none;
+    background-color: rgba(231, 0, 0, 0);
+}
+
+.wc-btn {
+    border: transparent;
+    width: 70%;
+    height: 100%;
+    border-radius: 25px;
+    font-family: Roboto, sans-serif;
+    background-color: white;
+    font-weight: bold;
+}
+
+.color-1 {
+    border: 2px solid #3867d6;
+    color: #3867d6;
+}
+
+.color-2 {
+    border: 2px solid #05c46b;
+    color: #05c46b;
+}
+
+
+.color-1:hover {
+    cursor: pointer;
+    background-color: #3867d6;
+    color: #ffffff;
+}
+
+.color-2:hover {
+    cursor: pointer;
+    background-color: #05c46b;
+    color: #ffffff;
+}
+
+/*end index css ------------------------------------------------------------------------------------------------------*/
+
+.loan-body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.content-area {
+    width: 50%;
+    height: 100%;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.top-div {
+    width: 100%;
+    height: 100%;
+}
+
+.loan-form {
+    flex-direction: column;;
+    display: flex;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>සීට්ටු Application - add user page </title>
+
+    <!--insert css files ---------------------------------------------------------------------------------------------->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/main.css">
+
+    <!--import google fonts ------------------------------------------------------------------------------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+<body class="overflow-hidden">
+
+<div class="header-div">
+    <h1 class="header text-center text-white font">
+        සීට්ටු&nbsp Application
+    </h1>
+</div>
+
+<div class="form-div">
+    <form class="form" method="post">
+        <div class="text-center">
+            <div class="container w-50">
+                <div class="input-group mb-3 text-center">
+                    <span class="input-group-text font">Enter user id&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp :</span>
+                    <label for="user_id"></label>
+                    <input type="text"
+                           class="form-control"
+                           id="user_id"
+                           name="userid"
+                           placeholder="C000"
+                    >
+                </div>
+                <div class="input-group mb-3 text-center">
+                    <span class="input-group-text font">Enter user name : </span>
+                    <label for="user_name"></label>
+                    <input type="text"
+                           class="form-control"
+                           id="user_name"
+                           name="username"
+                           placeholder="Name"
+                    >
+                </div>
+                <div class="input-group mb-3 text-center">
+                    <span class="input-group-text font">Enter amount&nbsp&nbsp&nbsp&nbsp&nbsp : </span>
+                    <label for="user_amount"></label>
+                    <input type="number"
+                           class="form-control"
+                           id="user_amount"
+                           name="useramount"
+                           placeholder="0000.00"
+                    >
+                </div>
+                <button type="submit" class="btn font bold btn-bg" onclick="validation()">Add new user</button>
+                <button type="button" class="btn font bold btn-bg" onclick="loadUsers()">Get All</button>
+                <a href="http://127.0.0.1:5000">
+                    <button type="button" class="btn font bold btn-bg">Go Back</button>
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<br><br>
+<div class="table_wrapper container">
+    <table class="table mt-1">
+        <thead>
+        <tr class="text-white container font table-bg">
+            <th scope="col">NIC</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Amount</th>
+        </tr>
+        </thead>
+        <tbody id="user_table_body" class="text-black font">
+        </tbody>
+    </table>
+</div>
+<!--Insert js files --------------------------------------------------------------------------------------------------->
+<script src="../static/js/jquery-3.6.0.min.js"></script>
+<script src="../static/js/main.js"></script>
+</body>
+</html>
