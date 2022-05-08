@@ -101,3 +101,26 @@
 }
 
 /*end index css ------------------------------------------------------------------------------------------------------*/
+
+.loan-body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.content-area {
+    width: 50%;
+    height: 100%;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.top-div {
+    width: 100%;
+    height: 100%;
+}
+
+.loan-form {
+    flex-direction: column;;
+    display: flex;
+}
