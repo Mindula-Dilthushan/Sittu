@@ -43,70 +43,27 @@
                            placeholder="0000.00"
                     >
                 </div>
-                <button type="submit" class="btn btn-success">Add new user</button>
+                <button type="submit" class="btn btn-success" onclick="validation()">Add new user</button>
             </div>
         </div>
     </form>
 </div>
 
 <br><br>
-<div class="table_wrapper container bg-dark ">
-    <table class="table container text-center text-white">
+<div class="table_wrapper container-fuild">
+    <table class="table mt-1">
         <thead>
-        <tr>
+        <tr class="bg-primary text-white container">
             <th scope="col">NIC</th>
             <th scope="col">username</th>
             <th scope="col">Amount</th>
         </tr>
         </thead>
-        <tbody>
-        <tr>
-
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
+        <tbody id="user_t_body">
         </tbody>
     </table>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-    function saveUser() {
-        if ($("#user_id").val() == "") {
-            alert("please enter user id number")
-            return
-        }
-        if ($("#user_name").val() == "") {
-            alert("please enter user name")
-            return
-        }
-        if ($("#user_amount").val() == "") {
-            alert("please enter your amount")
-            return
-        }
-        $.ajax({
-            url: 'http://127.0.0.1:5000/save',
-            type: 'POST',
-            dataType: 'json',
-            timeout: 500,
-            success: function () {
-                alert('User Save Success...!');
-            },
-            error: function (jqXhr, textStatus, errorMessage) {
-                $('p').append('Error: ' + errorMessage);
-            }
-        });
-    }
-</script>
+<script src="../static/js/main.js"></script>
 </body>
 </html>
