@@ -1,3 +1,6 @@
+loadUsers()
+
+//validation data -------------------------------------------------
 function validation() {
 
     let userId = $('#user_id').val();
@@ -18,9 +21,11 @@ function validation() {
         return false;
     } else {
         alert("save user success..!")
+        loadUsers()
     }
 }
 
+//load all data from table----------------------------------------
 function loadUsers() {
     $('#user_table_body').empty();
     $.ajax({
@@ -38,10 +43,4 @@ function loadUsers() {
             }
         }
     });
-}
-
-function clear() {
-    $("#user_id").val('')
-    $("#user_name").val('')
-    $("#user_amount").val('')
 }

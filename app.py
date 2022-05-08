@@ -1,7 +1,7 @@
 # project name          : sittu application
 # project contributions : chathumal/ ishanka/ mindula
 
-from flask import Flask, render_template, request, jsonify, make_response
+from flask import Flask, render_template, request, jsonify
 import os
 import json
 
@@ -13,7 +13,7 @@ database = 'db/database.json'
 # main root
 @app.route('/')
 def root():
-    return render_template('welcome.html')
+    return render_template('index.html')
 
 
 # check database.json file is empty
@@ -68,7 +68,7 @@ def saveUser():
 
             saveJson(savedata)
 
-    return render_template('index.html')
+    return render_template('adduser.html')
 
 
 @app.route('/get_user', methods=["GET"])
