@@ -8,7 +8,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-database = "D:\MyWorksSpace\Python Projects\IJSE Workspace\Sittu\db\database.json"
+database = "db/database.json"
 
 
 @app.route('/')
