@@ -87,10 +87,6 @@
     color: #05c46b;
 }
 
-.color-3 {
-    border: 2px solid #f0932b;
-    color: #f0932b;
-}
 
 .color-1:hover {
     cursor: pointer;
@@ -101,12 +97,6 @@
 .color-2:hover {
     cursor: pointer;
     background-color: #05c46b;
-    color: #ffffff;
-}
-
-.color-3:hover {
-    cursor: pointer;
-    background-color: #f0932b;
     color: #ffffff;
 }
 

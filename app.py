@@ -78,11 +78,6 @@ def get_user():
     return new_data
 
 
-@app.route('/debit', methods=["GET", "POST"])
-def debit():
-    return render_template('debit.html')
-
-
 @app.route('/loan', methods=["GET", "POST"])
 def loan():
     return render_template('loan.html')
