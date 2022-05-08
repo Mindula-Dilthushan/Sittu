@@ -2,13 +2,18 @@
    "Users": [
       {
          "id": "C001",
-         "name": "mindula",
-         "amount": "1140"
+         "name": "Mindula",
+         "amount": "500"
       },
       {
          "id": "C002",
          "name": "Dilthushan",
-         "amount": "2034"
+         "amount": "1000"
+      },
+      {
+         "id": "C003",
+         "name": "Manamperi",
+         "amount": "1500"
       }
    ]
 }

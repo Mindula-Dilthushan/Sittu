@@ -88,5 +88,10 @@ def saveUser():
     return render_template('index.html')
 
 
+@app.route('/debit', methods=["GET", "POST"])
+def debit():
+    return render_template('debit.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
