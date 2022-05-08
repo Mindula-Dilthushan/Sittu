@@ -27,6 +27,6 @@ git clone https://github.com/Mindula-Dilthushan/Sittu.git
 
 <div align="center"> 
 
-#### Developing Team 07 by [Mindula Dilthushan](https://github.com/Mindula-Dilthushan) / [Chathumal Jayasinghe](https://github.com/ChathumalJayasingha) / [Ishanka](https://github.com/IshankaDK) ^_~
+#### Developing by Team 07 members [Mindula Dilthushan](https://github.com/Mindula-Dilthushan) / [Chathumal Jayasinghe](https://github.com/ChathumalJayasingha) / [Ishanka](https://github.com/IshankaDK) ^_~
 </div>
 
