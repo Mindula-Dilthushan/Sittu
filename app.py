@@ -1,7 +1,7 @@
 # project name          : sittu application
 # project contributions : chathumal/ ishanka/ mindula
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify, make_response
 import os
 import json
 
@@ -21,13 +21,6 @@ def empty_data(database):
     return os.path.exists(database) and os.stat(database).st_size == 0
 
 
-@app.route('/get_user')
-def get_user():
-    data = json.load(open(database, mode="r", encoding="utf-8"))
-    # print(type(data))
-    return data
-
-
 # user save function
 @app.route('/save', methods=["GET", "POST"])
 def saveUser():
@@ -43,54 +36,51 @@ def saveUser():
         if "useramount" in request.form:
             useramount = request.form["useramount"]
 
-    print("Save data ============================= ", userid, username, useramount)
-
     isEmpty = empty_data(database)
 
     if userid == '' or username == '' or useramount == '':
-        print('userid : ', userid)
-        print('username : ', username)
-        print('useramount : ', useramount)
-
+        pass
     else:
-        print("data set")
         if isEmpty:
-            print("data is empty ======================================")
-            user_data = {
-                'Users': [{
-                    'id': userid,
-                    'name': username,
-                    'amount': useramount
-                }],
-
-            }
+            savedata = {
+                           'id': userid,
+                           'name': username,
+                           'amount': useramount
+                       },
             exit_file = open(database, "w")
-            json.dump(user_data, exit_file, indent=3)
+            json.dump(savedata, exit_file, indent=3)
             exit_file.close()
+
         else:
-            print("data is not empty ===================================")
 
             def saveJson(data, database='db/database.json'):
                 with open(database, 'r+') as db:
                     json_data = json.load(db)
-                    json_data["Users"].append(data)
+                    json_data.append(data)
                     db.seek(0)
                     json.dump(json_data, db, indent=3)
 
-            save_data = {
+            savedata = {
                 'id': userid,
                 'name': username,
                 'amount': useramount
             }
 
-            saveJson(save_data)
+            saveJson(savedata)
 
     return render_template('index.html')
 
 
-@app.route('/debit', methods=["GET", "POST"])
-def debit():
-    return render_template('debit.html')
+@app.route('/get_user', methods=["GET"])
+def get_user():
+    data = json.load(open(database, mode="r", encoding="utf-8"))
+    new_data = jsonify(data)
+    return new_data
+
+
+@app.route('/test', methods=["GET"])
+def test():
+    return "test"
 
 
 if __name__ == '__main__':

@@ -10,14 +10,14 @@ function validation() {
         return false;
     }
     if (userName == '') {
-        alert("please enter user name")
+        alert("please enter user name");
         return false;
     }
     if (userAmount == '') {
-        alert("please enter your amount")
+        alert("please enter your amount");
         return false;
     } else {
-        alert("User Save Success...!")
+        alert("save user success..!")
     }
 }
 
@@ -29,9 +29,7 @@ function loadUsers() {
         async: false,
         dataType: 'json',
         success: function (res) {
-            console.log(res)
-            var values = res.data;
-            console.log(values)
+            let values = res;
             for (i in values) {
                 let id = values[i].id;
                 let name = values[i].name;

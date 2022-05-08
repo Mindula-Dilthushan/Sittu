@@ -1,19 +1,7 @@
-{
-   "Users": [
-      {
-         "id": "C001",
-         "name": "Mindula",
-         "amount": "500"
-      },
-      {
-         "id": "C002",
-         "name": "Dilthushan",
-         "amount": "1000"
-      },
-      {
-         "id": "C003",
-         "name": "Manamperi",
-         "amount": "1500"
-      }
-   ]
-}
+[
+   {
+      "id": "C001",
+      "name": "Mindula",
+      "amount": "4350"
+   }
+]
