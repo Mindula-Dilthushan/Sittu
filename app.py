@@ -1,14 +1,20 @@
-# project name : sittu application
+# project name          : sittu application
+# project contributions : chathumal/ ishanka/ mindula
 
-from flask import Flask, render_template
+import json
+import os
+
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+database = "D:\MyWorksSpace\Python Projects\IJSE Workspace\Sittu\db\database.json"
+
 
 @app.route('/')
-def hello_world():
-    # return 'Welcome සීට්ටු Application !'
+def root():
     return render_template('index.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
