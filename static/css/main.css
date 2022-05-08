@@ -9,6 +9,21 @@
     justify-content: center;
     align-items: center;
     display: flex;
+    background-color: #3867d6;
+}
+
+.btn-bg {
+    background-color: #3867d6;
+    color: white;
+    margin: 10px;
+}
+
+.btn-bg:hover {
+    color: white;
+}
+
+.table-bg {
+    background-color: #3867d6;
 }
 
 .form-div {
