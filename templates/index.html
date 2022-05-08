@@ -44,6 +44,7 @@
                     >
                 </div>
                 <button type="submit" class="btn btn-success" onclick="validation()">Add new user</button>
+                <button type="button" class="btn btn-success" onclick="loadUsers()">Get All</button>
             </div>
         </div>
     </form>
@@ -59,11 +60,12 @@
             <th scope="col">Amount</th>
         </tr>
         </thead>
-        <tbody id="user_t_body">
+        <tbody id="user_table_body" class="text-black">
         </tbody>
     </table>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+<script src="../static/js/jquery-3.6.0.min.js"></script>
 <script src="../static/js/main.js"></script>
 </body>
 </html>

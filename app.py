@@ -21,6 +21,13 @@ def empty_data(database):
     return os.path.exists(database) and os.stat(database).st_size == 0
 
 
+@app.route('/get_user')
+def get_user():
+    data = json.load(open(database, mode="r", encoding="utf-8"))
+    # print(type(data))
+    return data
+
+
 # user save function
 @app.route('/save', methods=["GET", "POST"])
 def saveUser():
@@ -54,7 +61,8 @@ def saveUser():
                     'id': userid,
                     'name': username,
                     'amount': useramount
-                }, ]
+                }],
+
             }
             exit_file = open(database, "w")
             json.dump(user_data, exit_file, indent=3)
