@@ -1,5 +1,6 @@
 loadUsers()
 
+
 //button actions -------------------------------------------------
 $('.btn-user-01-search').click(function () {
     getUserId('#userId_1', '#userName_1', '#userAmount_1')
@@ -12,6 +13,11 @@ $('.btn-user-02-search').click(function () {
 $('.btn-user-03-search').click(function () {
     getUserId('#userId_3', '#userName_3', '#userAmount_3')
 });
+
+$('.btn-loan-amount').click(function () {
+    getMax()
+});
+
 
 //button text clear ----------------------------------------------
 $('.btn-user-01-clear').click(function () {
@@ -99,4 +105,22 @@ function clearUser(id, name, amount) {
     $(id).val('');
     $(name).val('');
     $(amount).val('');
+}
+
+
+//testing------------------------------------------
+function getMax() {
+    let user1 = $('#userId_1_B').val();
+    let user2 = $('#userId_2_B').val();
+    let usersAmoutTot = $('#usersAmoutTot').val();
+    let i_want_value = $('#you_want_amount').val();
+
+    let user1Amount = (i_want_value * user1) / usersAmoutTot;
+    let user2Amount = (i_want_value * user2) / usersAmoutTot;
+
+    let user1Am = parseFloat(user1Amount).toFixed(2);
+    let user2Am = parseFloat(user2Amount).toFixed(2);
+
+    $('#user_1_last_amount').val(user1Am);
+    $('#user_2_last_amount').val(user2Am);
 }

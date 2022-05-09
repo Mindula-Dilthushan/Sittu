@@ -2,21 +2,11 @@
    {
       "id": "C001",
       "name": "Mindula",
-      "amount": "4350"
+      "amount": "500"
    },
    {
       "id": "C002",
       "name": "Dilthushan",
-      "amount": "2550"
-   },
-   {
-      "id": "C003",
-      "name": "Manamperi",
-      "amount": "1350"
-   },
-   {
-      "id": "C004",
-      "name": "Shan",
-      "amount": "3250"
+      "amount": "1000"
    }
 ]

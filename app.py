@@ -87,7 +87,38 @@ def loan():
 def get_user():
     return jsonify(json.load(open(database, mode="r", encoding="UTF-8")))
 
-@app.route('/test', methods=["GET"])
+
+@app.route('/confirm_users', methods=["GET", "POST"])
+def confirm_users():
+    userAmount_2 = 0
+    userAmount_3 = 0
+    usersAmoutTot = 0
+    loanMax = 0
+    userId_1_B = 0
+    userId_2_B = 0
+
+    if request.method == "POST":
+        if "userAmount_2" in request.form:
+            userAmount_2 = request.form["userAmount_2"]
+        if "userAmount_3" in request.form:
+            userAmount_3 = request.form["userAmount_3"]
+            usersAmoutTot = float(userAmount_2) + float(userAmount_3)
+            loanMax = float(usersAmoutTot) / 100 * 80
+            userId_1_B = userAmount_2
+            userId_2_B = userAmount_3
+
+    return render_template(
+        'loan.html',
+        userAmount_2=userAmount_2,
+        userAmount_3=userAmount_3,
+        usersAmoutTot=usersAmoutTot,
+        loanMax=loanMax,
+        userId_1_B=userId_1_B,
+        userId_2_B=userId_2_B
+    )
+
+
+@app.route('/test')
 def test():
     return "test"
 

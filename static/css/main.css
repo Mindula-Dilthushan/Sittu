@@ -184,16 +184,16 @@
 
 .loan-form-2-title {
     width: 99%;
-    height: 12%;
+    height: 11%;
+    background-color: #05c46b;
     color: white;
     border: 2px solid white;
     border-radius: 20px;
-    background-color: #05c46b;
 }
 
 .loan-form-2-body {
     width: 99%;
-    height: 89%;
+    height: 70%;
     display: flex;
     flex-direction: row;
 }
@@ -224,6 +224,36 @@
     color: #ffffff;
 }
 
+.user-ok-div {
+    width: 100%;
+    height: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ok-form {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-user-ok {
+    width: 40%;
+    height: 35px;
+    margin: -10px 5px 5px 5px;
+    border-radius: 25px;
+    border: 2px solid #05c46b;
+    color: #05c46b;
+    font-family: Poppins, sans-serif;
+}
+
+.btn-user-ok:hover {
+    cursor: pointer;
+    background-color: #05c46b;
+    color: #ffffff;
+}
+
+
 /*right side css -------------------------------------------------------------------*/
 .right-content {
     width: 50%;
@@ -232,7 +262,8 @@
 
 .loan-form-3-title {
     width: 99%;
-    height: 6%;
+    height: 5.7%;
+    margin-top: 4px;
     background-color: #05c46b;
     color: white;
     border: 2px solid white;
@@ -246,7 +277,7 @@
 
 .loan-form-3-details-1 {
     width: 90%;
-    height: 10%;
+    height: 11%;
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -282,37 +313,60 @@
 }
 
 .loan-form-3-details-3 {
+    width: 99%;
+    height: 7%;
+    display: flex;
+    align-items: center;
+    background-color: #05c46b;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+.div-data-1 {
     width: 90%;
     height: 7%;
     display: flex;
     align-items: center;
-    border-radius: 20px;
-    margin-top: 10px;
+    flex-direction: row;
 }
 
-.loan-form-3-details-4 {
-    width: 90%;
-    height: 13%;
-    margin-top: 20px;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
+.div-data-1-0 {
+    height: 30px;
+    width: 200px;
+    background-color: transparent;
+    border: none;
+    margin-top: -4px;
+    outline: none;
 }
 
 .loan-form-3-bottom-6 {
     width: 90%;
-    height: 50%;
+    height: 45%;
     justify-content: center;
     display: flex;
 }
 
+.div-data {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.main-form {
+    width: 100%;
+    height: 100%;
+}
+
+.loanMax {
+    height: 30px;
+    width: 200px;
+    background-color: transparent;
+    border: none;
+    margin-top: -8px;
+    outline: none;
+}
 /*end loan css -------------------------------------------------------------------------------------------------------*/
 
-/*testing ----------------------------------*/
-.bg-test-1 {
-    background-color: #5e5e5e;
-}
-
-.bg-test-2 {
-    background-color: #0f0069;
-}
