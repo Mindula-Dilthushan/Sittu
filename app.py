@@ -141,55 +141,6 @@ def confirm_users():
     )
 
 
-@app.route('/loan_req', methods=["GET", "POST"])
-def loan_req():
-    userid = ''
-    username = ''
-    useramount = ''
-
-    if request.method == "POST":
-        if "userid" in request.form:
-            userid = request.form["userid"]
-        if "username" in request.form:
-            username = request.form["username"]
-        if "useramount" in request.form:
-            useramount = request.form["useramount"]
-
-    isEmpty = empty_data(userdb)
-
-    if userid == '' or username == '' or useramount == '':
-        pass
-    else:
-        if isEmpty:
-            savedata = {
-                           'id': userid,
-                           'name': username,
-                           'amount': useramount
-                       },
-            exit_file = open(userdb, "w")
-            json.dump(savedata, exit_file, indent=3)
-            exit_file.close()
-
-        else:
-
-            def saveJson(data, userdb='db/userdb.json'):
-                with open(userdb, 'r+') as db:
-                    json_data = json.load(db)
-                    json_data.append(data)
-                    db.seek(0)
-                    json.dump(json_data, db, indent=3)
-
-            savedata = {
-                'id': userid,
-                'name': username,
-                'amount': useramount
-            }
-
-            saveJson(savedata)
-
-    return render_template('index.html')
-
-
 @app.route('/test')
 def test():
     return "test"
