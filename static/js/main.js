@@ -110,8 +110,8 @@ function clearUser(id, name, amount) {
 
 //testing------------------------------------------
 function getMax() {
-    let user1 = $('#userId_1_B').val();
-    let user2 = $('#userId_2_B').val();
+    let user1 = $('#userAmount_2').val();
+    let user2 = $('#userAmount_3').val();
     let usersAmoutTot = $('#usersAmoutTot').val();
     let max_amount = $('#loanMax').val();
     let i_want_value = $('#you_want_amount').val();

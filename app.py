@@ -8,6 +8,7 @@ import json
 app = Flask(__name__)
 
 userdb = 'db/userdb.json'
+loanreqdb = 'db/loanreq.json'
 
 
 # main root
@@ -94,8 +95,15 @@ def confirm_users():
     userAmount_3 = 0
     usersAmoutTot = 0
     loanMax = 0
-    userId_1_B = 0
-    userId_2_B = 0
+    userId_1_B = ''
+    userId_2_B = ''
+    userId_3_B = ''
+    userName_1_B = ''
+    userName_2_B = ''
+    userName_3_B = ''
+    userAmount_1_B = 0
+    userAmount_2_B = 0
+    userAmount_3_B = 0
 
     if request.method == "POST":
         if "userAmount_2" in request.form:
@@ -104,8 +112,15 @@ def confirm_users():
             userAmount_3 = request.form["userAmount_3"]
             usersAmoutTot = float(userAmount_2) + float(userAmount_3)
             loanMax = float(usersAmoutTot) / 100 * 80
-            userId_1_B = userAmount_2
-            userId_2_B = userAmount_3
+            userId_1_B = request.form["userId_1"]
+            userId_2_B = request.form["userId_2"]
+            userId_3_B = request.form["userId_3"]
+            userName_1_B = request.form["userName_1"]
+            userName_2_B = request.form["userName_2"]
+            userName_3_B = request.form["userName_3"]
+            userAmount_1_B = request.form["userAmount_1"]
+            userAmount_2_B = request.form["userAmount_2"]
+            userAmount_3_B = request.form["userAmount_3"]
 
     return render_template(
         'loan.html',
@@ -114,8 +129,65 @@ def confirm_users():
         usersAmoutTot=usersAmoutTot,
         loanMax=loanMax,
         userId_1_B=userId_1_B,
-        userId_2_B=userId_2_B
+        userId_2_B=userId_2_B,
+        userId_3_B=userId_3_B,
+        userName_1_B=userName_1_B,
+        userName_2_B=userName_2_B,
+        userName_3_B=userName_3_B,
+        userAmount_1_B=userAmount_1_B,
+        userAmount_2_B=userAmount_2_B,
+        userAmount_3_B=userAmount_3_B
+
     )
+
+
+@app.route('/loan_req', methods=["GET", "POST"])
+def loan_req():
+    userid = ''
+    username = ''
+    useramount = ''
+
+    if request.method == "POST":
+        if "userid" in request.form:
+            userid = request.form["userid"]
+        if "username" in request.form:
+            username = request.form["username"]
+        if "useramount" in request.form:
+            useramount = request.form["useramount"]
+
+    isEmpty = empty_data(userdb)
+
+    if userid == '' or username == '' or useramount == '':
+        pass
+    else:
+        if isEmpty:
+            savedata = {
+                           'id': userid,
+                           'name': username,
+                           'amount': useramount
+                       },
+            exit_file = open(userdb, "w")
+            json.dump(savedata, exit_file, indent=3)
+            exit_file.close()
+
+        else:
+
+            def saveJson(data, userdb='db/userdb.json'):
+                with open(userdb, 'r+') as db:
+                    json_data = json.load(db)
+                    json_data.append(data)
+                    db.seek(0)
+                    json.dump(json_data, db, indent=3)
+
+            savedata = {
+                'id': userid,
+                'name': username,
+                'amount': useramount
+            }
+
+            saveJson(savedata)
+
+    return render_template('index.html')
 
 
 @app.route('/test')
