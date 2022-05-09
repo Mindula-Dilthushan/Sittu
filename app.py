@@ -7,7 +7,7 @@ import json
 
 app = Flask(__name__)
 
-database = 'db/database.json'
+userdb = 'db/userdb.json'
 
 
 # main root
@@ -16,9 +16,9 @@ def root():
     return render_template('index.html')
 
 
-# check database.json file is empty
-def empty_data(database):
-    return os.path.exists(database) and os.stat(database).st_size == 0
+# check userdb.json file is empty
+def empty_data(userdb):
+    return os.path.exists(userdb) and os.stat(userdb).st_size == 0
 
 
 # user save function
@@ -36,7 +36,7 @@ def saveUser():
         if "useramount" in request.form:
             useramount = request.form["useramount"]
 
-    isEmpty = empty_data(database)
+    isEmpty = empty_data(userdb)
 
     if userid == '' or username == '' or useramount == '':
         pass
@@ -47,14 +47,14 @@ def saveUser():
                            'name': username,
                            'amount': useramount
                        },
-            exit_file = open(database, "w")
+            exit_file = open(userdb, "w")
             json.dump(savedata, exit_file, indent=3)
             exit_file.close()
 
         else:
 
-            def saveJson(data, database='db/database.json'):
-                with open(database, 'r+') as db:
+            def saveJson(data, userdb='db/userdb.json'):
+                with open(userdb, 'r+') as db:
                     json_data = json.load(db)
                     json_data.append(data)
                     db.seek(0)
@@ -73,7 +73,7 @@ def saveUser():
 
 @app.route('/get_all_user', methods=["GET"])
 def get_all_user():
-    data = json.load(open(database, mode="r", encoding="UTF-8"))
+    data = json.load(open(userdb, mode="r", encoding="UTF-8"))
     new_data = jsonify(data)
     return new_data
 
@@ -85,7 +85,7 @@ def loan():
 
 @app.route('/get_user', methods=["GET"])
 def get_user():
-    return jsonify(json.load(open(database, mode="r", encoding="UTF-8")))
+    return jsonify(json.load(open(userdb, mode="r", encoding="UTF-8")))
 
 
 @app.route('/confirm_users', methods=["GET", "POST"])

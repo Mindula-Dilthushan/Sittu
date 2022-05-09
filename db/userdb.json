@@ -8,5 +8,10 @@
       "id": "C002",
       "name": "Dilthushan",
       "amount": "1000"
+   },
+   {
+      "id": "C003",
+      "name": "Manamperi",
+      "amount": "1500"
    }
 ]
