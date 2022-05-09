@@ -111,7 +111,7 @@ def confirm_users():
         if "userAmount_3" in request.form:
             userAmount_3 = request.form["userAmount_3"]
             usersAmoutTot = float(userAmount_2) + float(userAmount_3)
-            loanMax = float(usersAmoutTot) / 100 * 80
+            loanMax = round(float(usersAmoutTot) / 100 * 80, 2)
             userId_1_B = request.form["userId_1"]
             userId_2_B = request.form["userId_2"]
             userId_3_B = request.form["userId_3"]
@@ -137,7 +137,6 @@ def confirm_users():
         userAmount_1_B=userAmount_1_B,
         userAmount_2_B=userAmount_2_B,
         userAmount_3_B=userAmount_3_B
-
     )
 
 

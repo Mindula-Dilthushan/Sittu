@@ -1,17 +1,17 @@
 [
    {
       "id": "C001",
-      "name": "Mindula",
-      "amount": "500"
+      "name": "User 1",
+      "amount": "1570"
    },
    {
       "id": "C002",
-      "name": "Dilthushan",
-      "amount": "1000"
+      "name": "User 2",
+      "amount": "4567"
    },
    {
       "id": "C003",
-      "name": "Manamperi",
-      "amount": "1500"
+      "name": "User 3",
+      "amount": "1256"
    }
 ]
