@@ -9,95 +9,208 @@
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
-<body class="overflow-hidden">
-
-<div class="header-div">
-    <h1 class="header text-center text-white font">
+<body class="loan-body display-center">
+<div class="header-div-loan display-center">
+    <h1 class="text-center font mt-1 title-loan">
         සීට්ටු&nbsp Application - Loan Page
     </h1>
 </div>
 
-<div class="display-center content-area">
-
-    <div class="top-div">
-        <form class="loan-form" method="post">
-            <div class="text-center">
-                <div class="container w-50">
-                    <div class="input-group mb-3 text-center">
-                        <span class="input-group-text font">Enter user id&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp :</span>
-                        <label for="user_id"></label>
-                        <input type="text"
-                               class="form-control"
-                               id="user_id"
-                               name="userid"
-                               placeholder="C000"
-                        >
+<form class="main-form" method="post" action="{{url_for('confirm_users')}}">
+    <div class="display-center content-area">
+        <div class="left-content display-center">
+            <div class="small-content-1 display-center">
+                <div class="loan-form-1-title display-center">
+                    <h5 class="mt-2"> ණය ගන්න පුද්ගලයාගේ විස්තර </h5>
+                </div>
+                <div class="loan-form-1-body">
+                    <form class="loan-form" method="post">
+                        <div class="mt-3 container w-50">
+                            <div class="input-group mb-3 text-center">
+                                <span class="input-group-text font">search user id&nbsp&nbsp&nbsp:</span>
+                                <label></label>
+                                <input type="text"
+                                       class="form-control input-data"
+                                       id="userId_1"
+                                       name="userId_1"
+                                       placeholder="C000"
+                                       value="{{userId_1_B}}"
+                                >
+                            </div>
+                            <div class="input-group mb-3 text-center">
+                                <span class="input-group-text font">user name&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp :</span>
+                                <label></label>
+                                <input type="text"
+                                       class="form-control input-data"
+                                       id="userName_1"
+                                       name="userName_1"
+                                       placeholder="name"
+                                       value="{{userName_1_B}}"
+                                >
+                            </div>
+                            <div class="input-group mb-3 text-center">
+                                <span class="input-group-text font">user amount&nbsp&nbsp&nbsp&nbsp&nbsp : </span>
+                                <label></label>
+                                <input type="number"
+                                       class="form-control input-data"
+                                       id="userAmount_1"
+                                       name="userAmount_1"
+                                       placeholder="0000.00"
+                                       value="{{userAmount_1_B}}"
+                                >
+                            </div>
+                        </div>
+                        <div class="container w-50 display-center button-div">
+                            <button type="button" class="loan-btn btn-user-01-search">Search</button>
+                            <button type="button" class="loan-btn btn-user-01-clear">Clear</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="small-content-2 display-center">
+                <div class="ok-form">
+                    <div class="loan-form-2-title display-center">
+                        <h5 class="text-white mt-2"> ණය දෙන පුද්ගලයන්ගේ විස්තර </h5>
                     </div>
-                    <div class="input-group mb-3 text-center">
-                        <span class="input-group-text font">Enter user name : </span>
-                        <label for="user_name"></label>
-                        <input type="text"
-                               class="form-control"
-                               id="user_name"
-                               name="username"
-                               placeholder="Name"
-                        >
+                    <div class="loan-form-2-body mb-2">
+                        <div class="loan-form-2-left display-center">
+                            <div class="mt-5 container w-100">
+                                <div class="input-group mb-3 text-center">
+                                    <span class="input-group-text font">search user id&nbsp&nbsp&nbsp:</span>
+                                    <input type="text"
+                                           class="form-control input-data"
+                                           id="userId_2"
+                                           name="userId_2"
+                                           placeholder="C000"
+                                           value="{{userId_2_B}}"
+                                    >
+                                </div>
+                                <div class="input-group mb-3 text-center">
+                                    <span class="input-group-text font">user name&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp :</span>
+                                    <input type="text"
+                                           class="form-control input-data"
+                                           id="userName_2"
+                                           name="userName_2"
+                                           placeholder="name"
+                                           value="{{userName_2_B}}"
+                                    >
+                                </div>
+                                <div class="input-group mb-3 text-center">
+                                    <span class="input-group-text font">user amount&nbsp&nbsp&nbsp&nbsp&nbsp : </span>
+                                    <input type="number"
+                                           class="form-control input-data"
+                                           id="userAmount_2"
+                                           name="userAmount_2"
+                                           placeholder="0000.00"
+                                           value="{{userAmount_2_B}}"
+                                    >
+                                </div>
+                            </div>
+                            <div class="container w-100 display-center button-div">
+                                <button type="button" class="loan-btn-1 btn-user-02-search">Search</button>
+                                <button type="button" class="loan-btn-1 btn-user-02-clear">Clear</button>
+                            </div>
+                        </div>
+                        <div class="loan-form-2-right display-center">
+                            <div class="mt-5 container w-100">
+                                <div class="input-group mb-3 text-center">
+                                    <span class="input-group-text font">search user id&nbsp&nbsp&nbsp:</span>
+                                    <input type="text"
+                                           class="form-control input-data"
+                                           id="userId_3"
+                                           name="userId_3"
+                                           placeholder="C000"
+                                           value="{{userId_3_B}}"
+                                    >
+                                </div>
+                                <div class="input-group mb-3 text-center">
+                                    <span class="input-group-text font">user name&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp :</span>
+                                    <input type="text"
+                                           class="form-control input-data"
+                                           id="userName_3"
+                                           name="userName_3"
+                                           placeholder="name"
+                                           value="{{userName_3_B}}"
+                                    >
+                                </div>
+                                <div class="input-group mb-3 text-center">
+                                    <span class="input-group-text font">user amount&nbsp&nbsp&nbsp&nbsp&nbsp : </span>
+                                    <input type="number"
+                                           class="form-control input-data"
+                                           id="userAmount_3"
+                                           name="userAmount_3"
+                                           placeholder="0000.00"
+                                           value="{{userAmount_3_B}}"
+                                    >
+                                </div>
+                            </div>
+                            <div class="container w-100 display-center button-div">
+                                <button type="button" class="loan-btn-1 btn-user-03-search">Search</button>
+                                <button type="button" class="loan-btn-1 btn-user-03-clear">Clear</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-group mb-3 text-center">
-                        <span class="input-group-text font">Enter amount&nbsp&nbsp&nbsp&nbsp&nbsp : </span>
-                        <label for="user_amount"></label>
-                        <input type="number"
-                               class="form-control"
-                               id="user_amount"
-                               name="useramount"
-                               placeholder="0000.00"
-                        >
+                    <div class="user-ok-div">
+                        <button type="submit" class="btn-user-ok">Confirm Users</button>
                     </div>
                 </div>
             </div>
-        </form>
-    </div>
-    <div class="top-div">
-        <form class="loan-form" method="post">
-            <div class="text-center">
-                <div class="container w-50">
-                    <div class="input-group mb-3 text-center">
-                        <span class="input-group-text font">Enter user id&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp :</span>
-                        <label for="user_id"></label>
-                        <input type="text"
-                               class="form-control"
-                               id="user_id_2"
-                               name="userid"
-                               placeholder="C000"
-                        >
+        </div>
+        <div class="right-content display-center">
+            <div class="loan-form-3-title display-center">
+                <h5 class="mt-2 text-white">ණය විස්තර </h5>
+            </div>
+            <form class="ok-form" method="post">
+                <div class="loan-form-3-body display-center">
+                    <div class="loan-form-3-details-1">
+                        <div class="div-data">
+                            <h6> ◼ ණය දෙන පුද්ගලයන්ගේ මුළු ණය එකතුව : </h6>
+                            <input readonly id="usersAmoutTot" class="loanMax" value="{{usersAmoutTot}}">
+                        </div>
+                        <div class="div-data">
+                            <h6> ◼ ණය දෙන පුද්ගලයන්ගෙන් ගන්න පුළුවන් උපරිම ණය මුදල : </h6>
+                            <input readonly id="loanMax" class="loanMax loanMax-font" value="{{loanMax}}">
+                        </div>
                     </div>
-                    <div class="input-group mb-3 text-center">
-                        <span class="input-group-text font">Enter user name : </span>
-                        <label for="user_name"></label>
-                        <input type="text"
-                               class="form-control"
-                               id="user_name_2"
-                               name="username"
-                               placeholder="Name"
-                        >
+                    <div class="loan-form-3-details-2">
+                        <div class="now-loan-div">
+                            <div class="input-group text-center">
+                                <span class="input-group-text font">අවශ්‍ය ණය මුදල් ප්‍රමාණය &nbsp&nbsp:</span>
+                                <input type="text"
+                                       class="form-control"
+                                       name="you_want_amount"
+                                       id="you_want_amount"
+                                       placeholder="0000.00"
+                                       value="{{loan}}"
+                                >
+                            </div>
+                            <button type="button" class="m-lg-2 btn-loan-amount">Confirm</button>
+                        </div>
                     </div>
-                    <div class="input-group mb-3 text-center">
-                        <span class="input-group-text font">Enter amount&nbsp&nbsp&nbsp&nbsp&nbsp : </span>
-                        <label for="user_amount"></label>
-                        <input type="number"
-                               class="form-control"
-                               id="user_amount_2"
-                               name="useramount"
-                               placeholder="0000.00"
-                        >
+                    <div class="loan-form-3-details-3 display-center mt-5">
+                        <h6 class="mt-2"> ණය ලබාගත් පුද්ගලයින්ගෙන් ලැබුණු ණය ප්‍රමාණය </h6>
+                    </div>
+
+                    <div class="div-data-1 mt-3">
+                        <h6 class="mt-1"> ◼ පළමු පුද්ගලයාගෙන් ලැබුණු මුදල : </h6>
+                        <input readonly id="user_1_last_amount" class="div-data-1-0" value="">
+                    </div>
+
+                    <div class="div-data-1">
+                        <h6 class="mt-1"> ◼ දෙවන පුද්ගලයාගෙන් ලැබුණු මුදල : </h6>
+                        <input readonly id="user_2_last_amount" class="div-data-1-0" value="">
+                    </div>
+                    <div class="loan-form-3-bottom-6">
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
+</form>
 
 
+<!--import js files --------------------------------------------------------------------------------------------------->
+<script src="../static/js/jquery-3.6.0.min.js"></script>
 <script src="../static/js/main.js"></script>
 </body>
 </html>

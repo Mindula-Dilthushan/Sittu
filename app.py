@@ -7,7 +7,8 @@ import json
 
 app = Flask(__name__)
 
-database = 'db/database.json'
+userdb = 'db/userdb.json'
+loanreqdb = 'db/loanreq.json'
 
 
 # main root
@@ -16,9 +17,9 @@ def root():
     return render_template('index.html')
 
 
-# check database.json file is empty
-def empty_data(database):
-    return os.path.exists(database) and os.stat(database).st_size == 0
+# check userdb.json file is empty
+def empty_data(userdb):
+    return os.path.exists(userdb) and os.stat(userdb).st_size == 0
 
 
 # user save function
@@ -36,7 +37,7 @@ def saveUser():
         if "useramount" in request.form:
             useramount = request.form["useramount"]
 
-    isEmpty = empty_data(database)
+    isEmpty = empty_data(userdb)
 
     if userid == '' or username == '' or useramount == '':
         pass
@@ -47,14 +48,14 @@ def saveUser():
                            'name': username,
                            'amount': useramount
                        },
-            exit_file = open(database, "w")
+            exit_file = open(userdb, "w")
             json.dump(savedata, exit_file, indent=3)
             exit_file.close()
 
         else:
 
-            def saveJson(data, database='db/database.json'):
-                with open(database, 'r+') as db:
+            def saveJson(data, userdb='db/userdb.json'):
+                with open(userdb, 'r+') as db:
                     json_data = json.load(db)
                     json_data.append(data)
                     db.seek(0)
@@ -71,9 +72,9 @@ def saveUser():
     return render_template('adduser.html')
 
 
-@app.route('/get_user', methods=["GET"])
-def get_user():
-    data = json.load(open(database, mode="r", encoding="utf-8"))
+@app.route('/get_all_user', methods=["GET"])
+def get_all_user():
+    data = json.load(open(userdb, mode="r", encoding="UTF-8"))
     new_data = jsonify(data)
     return new_data
 
@@ -83,7 +84,63 @@ def loan():
     return render_template('loan.html')
 
 
-@app.route('/test', methods=["GET"])
+@app.route('/get_user', methods=["GET"])
+def get_user():
+    return jsonify(json.load(open(userdb, mode="r", encoding="UTF-8")))
+
+
+@app.route('/confirm_users', methods=["GET", "POST"])
+def confirm_users():
+    userAmount_2 = 0
+    userAmount_3 = 0
+    usersAmoutTot = 0
+    loanMax = 0
+    userId_1_B = ''
+    userId_2_B = ''
+    userId_3_B = ''
+    userName_1_B = ''
+    userName_2_B = ''
+    userName_3_B = ''
+    userAmount_1_B = 0
+    userAmount_2_B = 0
+    userAmount_3_B = 0
+
+    if request.method == "POST":
+        if "userAmount_2" in request.form:
+            userAmount_2 = request.form["userAmount_2"]
+        if "userAmount_3" in request.form:
+            userAmount_3 = request.form["userAmount_3"]
+            usersAmoutTot = float(userAmount_2) + float(userAmount_3)
+            loanMax = round(float(usersAmoutTot) / 100 * 80, 2)
+            userId_1_B = request.form["userId_1"]
+            userId_2_B = request.form["userId_2"]
+            userId_3_B = request.form["userId_3"]
+            userName_1_B = request.form["userName_1"]
+            userName_2_B = request.form["userName_2"]
+            userName_3_B = request.form["userName_3"]
+            userAmount_1_B = request.form["userAmount_1"]
+            userAmount_2_B = request.form["userAmount_2"]
+            userAmount_3_B = request.form["userAmount_3"]
+
+    return render_template(
+        'loan.html',
+        userAmount_2=userAmount_2,
+        userAmount_3=userAmount_3,
+        usersAmoutTot=usersAmoutTot,
+        loanMax=loanMax,
+        userId_1_B=userId_1_B,
+        userId_2_B=userId_2_B,
+        userId_3_B=userId_3_B,
+        userName_1_B=userName_1_B,
+        userName_2_B=userName_2_B,
+        userName_3_B=userName_3_B,
+        userAmount_1_B=userAmount_1_B,
+        userAmount_2_B=userAmount_2_B,
+        userAmount_3_B=userAmount_3_B
+    )
+
+
+@app.route('/test')
 def test():
     return "test"
 
