@@ -1,6 +1,15 @@
 loadUsers()
 
-//validation data -------------------------------------------------
+//button actions -------------------------------------------------
+$('.btn-user-01-search').click(function () {
+    getUserId1()
+});
+
+$('.btn-user-01-clear').click(function () {
+    clearUser1()
+});
+
+//validation data ------------------------------------------------
 function validation() {
 
     let userId = $('#user_id').val();
@@ -29,7 +38,7 @@ function validation() {
 function loadUsers() {
     $('#user_table_body').empty();
     $.ajax({
-        url: 'http://127.0.0.1:5000/get_user',
+        url: 'http://127.0.0.1:5000/get_all_user',
         method: 'GET',
         async: false,
         dataType: 'json',
@@ -45,3 +54,32 @@ function loadUsers() {
     });
 }
 
+//search user ----------------------------------------------------
+function getUserId1() {
+    $.ajax({
+        url: 'http://127.0.0.1:5000/get_user',
+        method: 'GET',
+        async: false,
+        dataType: 'json',
+        success: function (res) {
+            let values = res;
+            let input = $('#userId_1').val();
+            for (i in values) {
+                let id = values[i].id;
+                if (input == id) {
+                    $('#userName_1').val(values[i].name);
+                    $('#userAmount_1').val(values[i].amount);
+                    break
+                }
+
+            }
+        }
+    });
+}
+
+//clear user 1  text ---------------------------------------------
+function clearUser1() {
+    $('#userId_1').val('');
+    $('#userName_1').val('');
+    $('#userAmount_1').val('');
+}

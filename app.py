@@ -71,9 +71,9 @@ def saveUser():
     return render_template('adduser.html')
 
 
-@app.route('/get_user', methods=["GET"])
-def get_user():
-    data = json.load(open(database, mode="r", encoding="utf-8"))
+@app.route('/get_all_user', methods=["GET"])
+def get_all_user():
+    data = json.load(open(database, mode="r", encoding="UTF-8"))
     new_data = jsonify(data)
     return new_data
 
@@ -82,6 +82,10 @@ def get_user():
 def loan():
     return render_template('loan.html')
 
+
+@app.route('/get_user', methods=["GET"])
+def get_user():
+    return jsonify(json.load(open(database, mode="r", encoding="UTF-8")))
 
 @app.route('/test', methods=["GET"])
 def test():

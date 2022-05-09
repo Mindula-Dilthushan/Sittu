@@ -102,25 +102,217 @@
 
 /*end index css ------------------------------------------------------------------------------------------------------*/
 
+/*start loan css -----------------------------------------------------------------------------------------------------*/
 .loan-body {
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    /*background-color: black;*/
+}
+
+.header-div-loan {
+    width: 100%;
+    height: 8%;
+    background-color: #05c46b;
+}
+
+.title-loan {
+    color: #ffffff;
 }
 
 .content-area {
-    width: 50%;
-    height: 100%;
-    flex-direction: column;
-    padding: 50px;
+    width: 100%;
+    height: 92%;
+    flex-direction: row;
 }
 
-.top-div {
+.left-content {
+    width: 50%;
+    height: 100%;
+}
+
+.small-content-1 {
+    width: 100%;
+    height: 45%;
+}
+
+.loan-form-1-title {
+    width: 99%;
+    height: 13%;
+    background-color: #05c46b;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+.loan-form-1-body {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+}
+
+.loan-form {
     width: 100%;
     height: 100%;
 }
 
-.loan-form {
-    flex-direction: column;;
+.button-div {
+    flex-direction: row;
+}
+
+.loan-btn {
+    width: 50%;
+    height: 35px;
+    margin: 5px;
+    border-radius: 25px;
+    border: 2px solid #05c46b;
+    color: #05c46b;
+    font-family: Poppins, sans-serif;
+}
+
+.loan-btn:hover {
+    cursor: pointer;
+    background-color: #05c46b;
+    color: #ffffff;
+}
+
+
+.small-content-2 {
+    width: 100%;
+    height: 55%;
+}
+
+.loan-form-2-title {
+    width: 99%;
+    height: 12%;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    background-color: #05c46b;
+}
+
+.loan-form-2-body {
+    width: 99%;
+    height: 89%;
     display: flex;
+    flex-direction: row;
+}
+
+.loan-form-2-left {
+    width: 50%;
+    height: 80%;
+}
+
+.loan-form-2-right {
+    width: 50%;
+    height: 80%;
+}
+
+.loan-btn-1 {
+    width: 100%;
+    height: 35px;
+    margin: 5px;
+    border-radius: 25px;
+    border: 2px solid #05c46b;
+    color: #05c46b;
+    font-family: Poppins, sans-serif;
+}
+
+.loan-btn-1:hover {
+    cursor: pointer;
+    background-color: #05c46b;
+    color: #ffffff;
+}
+
+/*right side css -------------------------------------------------------------------*/
+.right-content {
+    width: 50%;
+    height: 100%;
+}
+
+.loan-form-3-title {
+    width: 99%;
+    height: 6%;
+    background-color: #05c46b;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+.loan-form-3-body {
+    width: 100%;
+    height: 93%;
+}
+
+.loan-form-3-details-1 {
+    width: 90%;
+    height: 10%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.loan-form-3-details-2 {
+    width: 90%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.now-loan-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-loan-amount {
+    width: 30%;
+    height: 35px;
+    color: #05c46b;
+    border-radius: 20px;
+    border: 2px solid #05c46b;
+    font-family: Poppins, sans-serif;
+}
+
+.btn-loan-amount:hover {
+    cursor: pointer;
+    background-color: #05c46b;
+    color: #ffffff;
+}
+
+.loan-form-3-details-3 {
+    width: 90%;
+    height: 7%;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.loan-form-3-details-4 {
+    width: 90%;
+    height: 13%;
+    margin-top: 20px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.loan-form-3-bottom-6 {
+    width: 90%;
+    height: 50%;
+    justify-content: center;
+    display: flex;
+}
+
+/*end loan css -------------------------------------------------------------------------------------------------------*/
+
+/*testing ----------------------------------*/
+.bg-test-1 {
+    background-color: #5e5e5e;
+}
+
+.bg-test-2 {
+    background-color: #0f0069;
 }
