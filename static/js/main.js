@@ -5,8 +5,25 @@ $('.btn-user-01-search').click(function () {
     getUserId('#userId_1', '#userName_1', '#userAmount_1')
 });
 
+$('.btn-user-02-search').click(function () {
+    getUserId('#userId_2', '#userName_2', '#userAmount_2')
+});
+
+$('.btn-user-03-search').click(function () {
+    getUserId('#userId_3', '#userName_3', '#userAmount_3')
+});
+
+//button text clear ----------------------------------------------
 $('.btn-user-01-clear').click(function () {
     clearUser('#userId_1', '#userName_1', '#userAmount_1')
+});
+
+$('.btn-user-02-clear').click(function () {
+    clearUser('#userId_2', '#userName_2', '#userAmount_2')
+});
+
+$('.btn-user-03-clear').click(function () {
+    clearUser('#userId_3', '#userName_3', '#userAmount_3')
 });
 
 //validation data ------------------------------------------------
