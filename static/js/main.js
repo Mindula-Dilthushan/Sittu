@@ -2,11 +2,11 @@ loadUsers()
 
 //button actions -------------------------------------------------
 $('.btn-user-01-search').click(function () {
-    getUserId1()
+    getUserId('#userId_1', '#userName_1', '#userAmount_1')
 });
 
 $('.btn-user-01-clear').click(function () {
-    clearUser1()
+    clearUser('#userId_1', '#userName_1', '#userAmount_1')
 });
 
 //validation data ------------------------------------------------
@@ -55,7 +55,7 @@ function loadUsers() {
 }
 
 //search user ----------------------------------------------------
-function getUserId1() {
+function getUserId(id, name, amount) {
     $.ajax({
         url: 'http://127.0.0.1:5000/get_user',
         method: 'GET',
@@ -63,12 +63,12 @@ function getUserId1() {
         dataType: 'json',
         success: function (res) {
             let values = res;
-            let input = $('#userId_1').val();
+            let input = $(id).val();
             for (i in values) {
                 let id = values[i].id;
                 if (input == id) {
-                    $('#userName_1').val(values[i].name);
-                    $('#userAmount_1').val(values[i].amount);
+                    $(name).val(values[i].name);
+                    $(amount).val(values[i].amount);
                     break
                 }
 
@@ -78,8 +78,8 @@ function getUserId1() {
 }
 
 //clear user 1  text ---------------------------------------------
-function clearUser1() {
-    $('#userId_1').val('');
-    $('#userName_1').val('');
-    $('#userAmount_1').val('');
+function clearUser(id, name, amount) {
+    $(id).val('');
+    $(name).val('');
+    $(amount).val('');
 }
